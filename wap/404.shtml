@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui" />  
+    <meta name="description" content="" />
+    <meta name="keywords" content="赚钱在线,财富管理、普惠金融、金融、理财、基金、借款、贷款、高收益、高流动性、零投宝、合约宝、灵活理财" />
+    <link rel="apple-touch-icon" href="resource/images/touch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="resource/images/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="resource/images/touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="resource/images/touch-icon-ipad-retina.png">
+    <title>合约宝-手机版</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="stylesheet" href="resource/style/jquery.mobile-1.4.2.min.css" />
+    <script src="resource/js/jquery.min.js"></script>
+    <script src="resource/js/jquery.mobile-1.4.2.js"></script>
+    <link href="resource/style/base.css?v=20140815" rel="stylesheet" />
+	<link href="resource/style/cx.css?v=20140815" rel="stylesheet" />
+</head>
+<body>
+    <noscript>您的浏览器不支持JavaScript,请使用其它浏览器</noscript>
+    <div data-role="page" id="page_error" >
+          <header data-role="header" class="index">
+            <section class="hd-logo"></section>
+            <section class="hd-nav logined">
+                <a href="/login.shtml"><i></i></a>
+            </section>
+        </header>
+        <section id="error">
+        	<div></div>
+            <h1>您要查询的页面已删除或者暂时不能使用！</h1>
+            <ul>
+                <li><a href="javascript:history.back(-1);">返回上一页面</a></li>
+                <li><a href="/index.shtml">返回首页</a></li>
+            </ul>
+        </section>
+        <!--#include virtual="/resource/include/footer.html"--><!--页脚包含文件，非注释，可替换成后台所需的页脚jsp文件-->
+    </div>
+</body>
+</html>

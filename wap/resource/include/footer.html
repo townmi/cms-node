@@ -1,0 +1,21 @@
+        <footer id="footer" data-role="footer">
+            <section class="signUp">
+                <!--<p class="ing"><a class="ui-link">登录</a><a class="ui-link">注册</a></p>-->
+                <p class="ing"><a class="ui-link f_username" href="/user/uCenter.shtml" data-ajax="false">烈日骄阳</a> <a class="ui-link">退出</a></p> 
+                <p><a href="/index.shtml" data-ajax="false">触屏版</a><a href="#">电脑版</a></p>
+                <p class="rtop">返回顶部</p>
+            </section>
+            <section id="copyright">
+                copyright 2014 toumi.com
+            </section>
+        </footer>
+        <script type="text/javascript">
+		
+        $(function(){
+			$(".rtop").bind("tap",function(){
+				$("body,html").animate({scrollTop:0},800);	 
+			});
+		});
+        </script>
+        
+   

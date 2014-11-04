@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui" />  
+    <meta name="description" content="" />
+    <meta name="keywords" content="赚钱在线,财富管理、普惠金融、金融、理财、基金、借款、贷款、高收益、高流动性、零投宝、合约宝、灵活理财" />
+    <link rel="apple-touch-icon" href="resource/images/touch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="resource/images/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="resource/images/touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="resource/images/touch-icon-ipad-retina.png">
+    <title>合约宝-手机版</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="stylesheet" href="resource/style/jquery.mobile-1.4.2.min.css" />
+    <script src="resource/js/jquery.min.js"></script>
+    <script src="resource/js/jquery.mobile-1.4.2.js"></script>
+    <script type="text/javascript" src="resource/js/touchScroll.js"></script>
+	<script type="text/javascript" src="resource/js/touchslider.dev.js"></script>
+    <link href="resource/style/base.css?v=20140815" rel="stylesheet" />
+	<link href="resource/style/cx.css?v=20140815" rel="stylesheet" />
+</head>
+<body>
+    <noscript>您的浏览器不支持JavaScript,请使用其它浏览器</noscript>
+    <div data-role="page">
+        <header data-role="header" class="index">
+            <section class="hd-logo"></section>
+            <section class="hd-nav logined">
+                <a href="login.shtml"><i></i></a>
+            </section>
+        </header> 
+        <!--头部结束-->
+        <section data-role="content">
+        	<header id="slide">
+	            <div class="swipe">
+				    <ul class="sliderUL" id="slider">
+					    <li style="display:block">
+					    	<a href="#" data-ajax="false">
+					    		<img src="resource/images/assets/1.jpg" alt="" width="" />
+					    	</a>
+					    </li>
+					    <li>
+							<a href="#" data-ajax="false">
+					    		<img src="resource/images/assets/1.jpg" alt="" width="" />
+					    	</a>
+					    </li>
+					    <li>
+							<a href="#" data-ajax="false">
+					    		<img src="resource/images/assets/1.jpg" alt="" width="" />
+					    	</a>
+					    </li>
+				    </ul>
+	                <div class="swipeFoot">
+				        <div class="pagenavi">
+					        <a href="javascript:void(0);" class="active">1</a>
+					        <a href="javascript:void(0);">2</a>
+					        <a href="javascript:void(0);">3</a>
+				        </div>
+	                </div>
+	                <div class="pagedesc">
+			            <div class="dzsp_3" style="display: block;">
+			                <a href="#" data-ajax="false">
+			                	<h1>【立兑计划】小米3（电信版）1</h1>
+			                	<p>参与立兑计划无需绑定套餐，理财收益立即对付，完美覆盖购机款...</p>
+			            	</a>
+			            </div>
+			            <div class="dzsp_3">
+			            	<a href="#" data-ajax="false">
+				                <h1>【立兑计划】小米3（电信版）2</h1>
+				                <p>参与立兑计划无需绑定套餐，理财收益立即对付，完美覆盖购机款...</p>
+			            	</a>
+			            </div>
+			            <div class="dzsp_3">
+			            	<a href="#" data-ajax="false">
+				                <h1>【立兑计划】小米3（电信版）3</h1>
+				                <p>参与立兑计划无需绑定套餐，理财收益立即对付，完美覆盖购机款...</p>
+			            	</a>
+			            </div>
+			        </div>
+			    </div>		    
+	            <script type="text/javascript">
+	                var active = 0,
+		                as = $(".pagenavi").find("a");
+	                $(function () {                  
+	                    var t2 = new TouchSlider({ 
+	                    	id: 'slider', 
+	                    	speed: 600, 
+	                    	timeout: 5000, 
+	                    	before: function (index) {
+		                        as[active].className = '';
+		                        active = index;
+		                        as.eq(active).addClass("active").siblings("a").removeClass("active")
+		                     
+		                        $(".dzsp_3").eq(active).show().siblings(".dzsp_3").hide();
+		                    }
+	                    });
+	
+	                });
+	            </script>
+	            <!--swipe end-->
+	        </header>
+            <!--头图部分结束-->
+		    <div class="mui-card">
+       		    <ul>
+       		        <li>
+       		            <a class="navigate" href="product/proInfo.shtml" data-ajax="false">
+       		                <h1>【合约计划A】 Iphone5s（电信版）</h1>
+       		                <div class="listWrap clearfix" >    		              	
+       		                	<div>
+       		                		<p class="flag"><img src="resource/images/assets/flag.png"></p>
+       		                		<img class="mainImg" src="resource/images/assets/img.jpg" alt="【合约计划A】 Iphone5s（电信版）" />
+       		                	</div>
+       		                	<div>Iphone5s（电信版）+389元套餐*25个月=5900元！
+       		                		<span>立即购买</span>
+       		                	</div>
+       		                </div>
+       		            </a>
+       		        </li>
+       		        <li>
+       		            <a class="navigate" href="product/proInfo.shtml" data-ajax="false">
+       		                <h1>【合约计划A】 Iphone5s（电信版）</h1>
+       		                <div class="listWrap clearfix" >    		              	
+       		                	<div>
+       		                		<p class="flag"><img src="resource/images/assets/flag.png"></p>
+       		                		<img class="mainImg" src="resource/images/assets/img.jpg" alt="【合约计划A】 Iphone5s（电信版）" />
+       		                	</div>
+       		                	<div>Iphone5s（电信版）+389元套餐*25个月=5900元！
+       		                		<span>立即购买</span>
+       		                	</div>
+       		                </div>
+       		            </a>
+       		        </li>
+       		        <li>
+       		            <a class="navigate" href="product/proInfo.shtml" data-ajax="false">
+       		                <h1>【合约计划A】 Iphone5s（电信版）</h1>
+       		                <div class="listWrap clearfix" >    		              	
+       		                	<div>
+       		                		<p class="flag"><img src="resource/images/assets/flag.png"></p>
+       		                		<img class="mainImg" src="resource/images/assets/img.jpg" alt="【合约计划A】 Iphone5s（电信版）" />
+       		                	</div>
+       		                	<div>Iphone5s（电信版）+389元套餐*25个月=5900元！
+       		                		<span>立即购买</span>
+       		                	</div>
+       		                </div>
+       		            </a>
+       		        </li>
+       		        <li>
+       		            <a class="navigate" href="product/proInfo.shtml" data-ajax="false">
+       		                <h1>【合约计划A】 Iphone5s（电信版）</h1>
+       		                <div class="listWrap clearfix" >    		              	
+       		                	<div>
+       		                		<p class="flag"><img src="resource/images/assets/flag.png"></p>
+       		                		<img class="mainImg" src="resource/images/assets/img.jpg" alt="【合约计划A】 Iphone5s（电信版）" />
+       		                	</div>
+       		                	<div>Iphone5s（电信版）+389元套餐*25个月=5900元！
+       		                		<span>立即购买</span>
+       		                	</div>
+       		                </div>
+       		            </a>
+       		        </li>
+       		        <li>
+       		            <a class="navigate" href="product/proInfo.shtml" data-ajax="false">
+       		                <h1>【合约计划A】 Iphone5s（电信版）</h1>
+       		                <div class="listWrap clearfix" >    		              	
+       		                	<div>
+       		                		<p class="flag"><img src="resource/images/assets/flag.png"></p>
+       		                		<img class="mainImg" src="resource/images/assets/img.jpg" alt="【合约计划A】 Iphone5s（电信版）" />
+       		                	</div>
+       		                	<div>Iphone5s（电信版）+389元套餐*25个月=5900元！
+       		                		<span>立即购买</span>
+       		                	</div>
+       		                </div>
+       		            </a>
+       		        </li>
+       		        <li>
+       		            <a class="navigate" href="product/proInfo.shtml" data-ajax="false">
+       		                <h1>【合约计划A】 Iphone5s（电信版）</h1>
+       		                <div class="listWrap clearfix" >    		              	
+       		                	<div>
+       		                		<p class="flag"><img src="resource/images/assets/flag.png"></p>
+       		                		<img class="mainImg" src="resource/images/assets/img.jpg" alt="【合约计划A】 Iphone5s（电信版）" />
+       		                	</div>
+       		                	<div>Iphone5s（电信版）+389元套餐*25个月=5900元！
+       		                		<span>立即购买</span>
+       		                	</div>
+       		                </div>
+       		            </a>
+       		        </li>
+       		    </ul>
+       		</div>
+        </section><!--内容区域-->
+        <!--#include virtual="/resource/include/footer.html"--><!--页脚包含文件，非注释，可替换成后台所需的页脚jsp文件-->
+    </div>
+</body>
+</html>
