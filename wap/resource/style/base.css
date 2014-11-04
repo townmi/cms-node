@@ -243,3 +243,71 @@ footer#footer .version a{
 	right: 17px;
 	top: 6px;
 }
+
+/*page 后退*/
+.page{
+	height: 43px;
+	background-color: #ef4023;
+	position: relative;
+}
+.page .back{
+	position: absolute;
+	left: 9px;
+	top: 14px;
+}
+.page .back img{
+	width: 20px;
+	height: 16px;
+}
+.page .title{
+	line-height: 43px;
+	font-size: 1.285rem;
+	color: #ffffff;
+	text-align: center;
+}
+/* login and reg*/
+.content{
+	padding: 5px 0 8px 0;
+	background-color: #e4e4e4;
+}
+#form{
+	width: 96.875%;
+	margin: 0 auto;
+	overflow: hidden;
+	background-color: #ffffff;
+	box-shadow: 0px 0px 1px 2px #eee;
+}
+#form ul{
+	width: 102%;
+	height: 36px;
+	background-color: #f7f7f7;
+}
+#form li{
+	width: 49%;
+	height: 100%;
+	line-height: 36px;
+	float: left;
+	font-size: 1rem;
+	text-align: center;
+}
+#form li.border{
+	border-left: 1px solid #e6e6e6;
+}
+#form li a{
+	display: block;
+	border-bottom: 1px solid #e6e6e6;
+	color: #36393b; 
+}
+#form li a.active{
+	background-color: #ffffff;
+	border-color: #ffffff;
+}
+
+
+
+
+
+
+
+
+
