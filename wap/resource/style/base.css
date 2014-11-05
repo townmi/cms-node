@@ -54,7 +54,9 @@ html{font-size: 14px; font-family:arial,'Microsoft Yahei';overflow-y:scroll; }
 .fr{float: right;}
 .clear:after{content: ''; display: block; clear: both;}
 .clear{zoom: 1;}
-
+.hide{
+	display: none;
+}
 /*index*/
 
 #head{
@@ -214,7 +216,7 @@ footer#footer .version a{
 	font-size: 1rem;
 }
 /*版权*/
-#copyright{
+.copyright{
 	padding-top: 6px;
 	padding-bottom: 60px;
 	background: #37383d;
@@ -267,7 +269,7 @@ footer#footer .version a{
 }
 /* login and reg*/
 .content{
-	padding: 5px 0 8px 0;
+	padding: 5px 0 100px 0;
 	background-color: #e4e4e4;
 }
 #form{
@@ -304,10 +306,345 @@ footer#footer .version a{
 }
 
 
+/*login*/
+#login{
+	padding: 1rem;
+}
+#login div{
+	position: relative;
+	margin-top: 10px;
+}
+#login div input.j-input,#login .ver input{
+	padding: 0 .8em;
+	font-size: 1.2rem;
+	font-family: arial,'Microsoft Yahei';
+	height: 45px;
+	border: 1px solid #c7c7c7;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+	border-radius: 5px;
+}
+#login div input.err{
+	border: 1px solid #d2130b;
+}
+#login div.entry{
+	color: #d2130b;
+}
+#login div input.j-input[type="tel"], #login div input.j-input[type="password"]{
+	background-size: 20px auto;
+}
+#login .login_on{
+	display: inline-block;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	background-color: #eb4225;
+	color: #fff;
+	font-size: 1.285rem;
+	border-radius: 5px;
+}
+#login .btns{
+	padding: 0.4rem 0;
+}
+#login .btns p{
+	float: right;
+}
+#login .btns a{
+	font-size: 1rem;
+	line-height: 1.4rem;
+	color: #57595a;
+	margin: 0 .6rem;
+}
+/*reg same as login*/
+.content2{
+	padding: 5px 0 15px 0;
+	background-color: #e4e4e4;
+}
+#login .who a{
+	float: left;
+	width: 50%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	padding-left: 1rem;
+}
+#login .who i{
+	width: 1.2rem;
+	height: 1.2rem;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 2px solid #d9d9d9;
+	border-radius: 0.6rem;
+	background-color: #d9d9d9;
+	float: left;
+}
+#login .who a.active i{
+	background-color: #ef4023;
+}
+#login .who span{
+	margin-left: .6rem;
+	line-height: 1.2rem;
+	float: left;
+	font-size: 1rem;
+	color: #37383d;
+}
+/*验证码*/
+#login .ver input{
+	width: 50%;
+	background-size: 20px auto;
+	float: left;
+}
+#login .ver .ui-input-text{
+	border: none;
+}
+#login .ver a{
+	width: 45%;
+	float: right;
+	background-color: #a2a2a2;
+	color: #ffffff;
+	border-radius: 5px;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+}
+/*协议*/
+#login .xieyi{
+	padding-left: .6rem;
+}
+#login .xieyi i{
+	width: 16px;
+	height: 16px;
+	float: left;
+	background-image: url(../images/xieyi.png);
+	background-size: 16px 16px;
+}
+#login .xieyi i.active{
+	background-image: url(../images/xieyi2.png);
+}
+#login .xieyi span{
+	line-height: 16px;
+	font-size: 1rem;
+	margin: 0 .3rem;
+	color: #777777;
+}
+#login .xieyi a{
+	color: #1788ff;
+}
+/*申请店铺*/
+.content3{
+	padding: .6rem;
+	padding-bottom: 0;
+	background-color: #ffffff;
+}
+#shop h2{
+	font-weight: normal;
+	font-size: 1rem;
+	line-height: 1.8rem;
+	color: #555555;
+}
+#shop .form{
+	padding: .4rem;
+}
+#shop .form.border{
+	border-bottom: 1px solid #e7e7e7;
+}
+#shop .form div{
+	position: relative;
+	margin-top: 10px;
+}
+#shop .form input.j-input{
+	padding: 0 .8em;
+	font-size: 1.2rem;
+	font-family: arial,'Microsoft Yahei';
+	height: 45px;
+	border: 1px solid #c7c7c7;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+	border-radius: 5px;
+}
+#shop .form input.err{
+	border: 1px solid #d2130b;
+}
+#shop .form .entry{
+	line-height: 1.5rem;
+	color: #d2130b;
+}
+#shop .form input{
+	background-size: 20px auto;
+}
+#shop .form p{
+	font-size: 0.99rem;
+	color: #838383;
+	line-height: 1.5rem;
+}
 
-
-
-
-
-
-
+#shop .change_shop span{
+	color: #97a4ae;
+	float: left;
+	line-height: 25px;
+}
+#shop .change_shop em{
+	float: left;
+	line-height: 25px;
+	color: #5caada;
+}
+#shop .change_shop a{
+	float: right;
+	width: 62px;
+	height: 25px;
+	line-height: 25px;
+	font-size: 1rem;
+	color: #ffffff;
+	background-color: #5eacde;
+	border-radius: 3px;
+	text-align: center;
+}
+#shop .for_change_shop{
+	display: none;
+}
+#shop .login_on{
+	padding: .5rem;
+	text-align: center;
+}
+#shop .login_on a{
+	display: inline-block;
+	width: 60%;
+	height: 35px;
+	font-size: 1.1rem;
+	background-color: #fc6c4d;
+	color: #ffffff;
+	line-height: 35px;
+	border-radius: 4px;
+}
+/*审核*/
+#exma{
+	padding-top: 1rem;
+	padding-left: 1.8rem;
+	padding-right: 1.8rem;
+	color: #838383;
+}
+#exma div{
+	position: relative;
+	margin-top: 10px;
+}
+#exma div.img{
+	text-align: center;
+}
+#exma div img{
+	width: 85px;
+	height: 85px;
+}
+#exma div h2{
+	font-size: 1.1rem;
+	line-height: 30px;
+}
+#exma div p{
+	font-size: 1rem;
+	line-height: 28px;
+}
+#exma div a{
+	color: #5faee0;
+}
+.exma_ok{
+	padding-bottom: 50px;
+}
+.exma_fail{
+	padding-bottom: 15px;
+}
+#exma div.notice{
+	color: #ff6637;
+	font-size: .8rem;
+	line-height: 16px;
+	padding-top: 16px;
+}
+#exma .change{
+	text-align: center;
+	padding-top: 20px;
+}
+#exma .change a{
+	display: inline-block;
+	width: 100px;
+	height: 30px;
+	font-size: 1rem;
+	color: #ffffff;
+	line-height: 30px;
+	text-align: center;
+	background-color: #60b1e3;
+	border-radius: 4px;
+}
+#feddback{
+	padding-top: .6rem;
+	padding-left: .4rem;
+	padding-right: .4rem;
+	color: #838383;
+}
+#feddback div{
+	position: relative;
+	margin-top: 10px;
+}
+#feddback div.border{
+	padding-bottom: 10px;
+	border-bottom: 1px solid #eeeeee;
+}
+#feddback p{
+	line-height: 20px;
+}
+#feddback textarea{
+	width: 100%;
+	border: none;
+	background-color: #eee;
+	font-size: 1rem;
+	line-height: 1.5rem;
+}
+#feddback p.p_right{
+	float: right;
+}
+#feddback .link span{
+	line-height: 45px;
+}
+#feddback .link input{
+	width: 75%;
+	padding: 0 .8em;
+	font-size: 1.2rem;
+	font-family: arial,'Microsoft Yahei';
+	height: 45px;
+	border: 1px solid #c7c7c7;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	border-radius: 5px;
+	float: right
+}
+#feddback .link input.err{
+	border: 1px solid #d2130b;
+}
+#feddback .link input{
+	background-size: 20px auto;
+}
+#feddback .tijiao{
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+#feddback .tijiao a{
+	width: 60%;
+	height: 40px;
+	display: inline-block;
+	line-height: 40px;
+	color: #ffffff;
+	font-size: 1.2rem;
+	text-align: center;
+	background-color: #fc6c4d;
+	border-radius: 5px;
+}

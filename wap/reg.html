@@ -24,14 +24,18 @@
             <section class="title">星火计划</section>
         </header>
         <!--头部结束-->
-        <div class='content'>
+        <div class='content2'>
             <div id="form">
                 <ul class='clear'>
-                    <li><a href="javascript:;" class='active'>登录</a></li>
-                    <li class="border"><a href="javascript:;">注册</a></li>
+                    <li><a href="javascript:;">登录</a></li>
+                    <li class="border"><a href="javascript:;" class='active'>注册</a></li>
                 </ul>
                 <div id="login">
                     <form method="post" action="">
+                        <div class="who clear">
+                            <a href="javascript:;" class='active'><i></i><span>我是理财经理</span></a>
+                            <a href="javascript:;"><i></i><span>我是投资人</span></a>
+                        </div>
                         <div>
                             <input type="tel" placeholder="请输入手机号码" class="j-input err" name="tel" value="" autocomplete="off" maxlength="11" data-role="none">
                         </div>
@@ -40,14 +44,17 @@
                             <input type="password" placeholder="6-18位数字与字母组合的密码" class="j-input" name="passwd" value="" autocomplete="off" maxlength="18" data-role="none">
                         </div>
                         <div class="entry" style="">密码至少6位哦</div>
-                        <div>
-                            <a href="#" class="login_on">立即登录</a>
+                        <div class="ver clear">
+                            <input type="text" placeholder="请输入验证码">
+                            <a href="javascript:;">获取短信验证码</a>
                         </div>
-                        <div class="btns clear">
-                            <p>
-                                <a href="#" data-ajax="false">立即注册</a>
-                                <a href="#" data-ajax="false">忘记密码？</a>
-                            </p>
+                        <div class="xieyi clear">
+                            <i class='active'></i>
+                            <span>我已阅读并同意</span>
+                            <a href="#">《星火注册服务协议》</a>
+                        </div>
+                        <div>
+                            <a href="#" class="login_on">立即注册</a>
                         </div>
                     </form>
                 </div>

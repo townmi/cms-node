@@ -21,35 +21,49 @@
             <section class="back">
                 <a href="javascript:history.go(-1);"><img src="resource/images/back.png" alt="back"></a>
             </section>
-            <section class="title">星火计划</section>
+            <section class="title">申请店铺</section>
         </header>
         <!--头部结束-->
-        <div class='content'>
-            <div id="form">
-                <ul class='clear'>
-                    <li><a href="javascript:;" class='active'>登录</a></li>
-                    <li class="border"><a href="javascript:;">注册</a></li>
-                </ul>
-                <div id="login">
-                    <form method="post" action="">
-                        <div>
-                            <input type="tel" placeholder="请输入手机号码" class="j-input err" name="tel" value="" autocomplete="off" maxlength="11" data-role="none">
-                        </div>
-                        <div class="entry" style="">该手机号已注册</div>
-                        <div>
-                            <input type="password" placeholder="6-18位数字与字母组合的密码" class="j-input" name="passwd" value="" autocomplete="off" maxlength="18" data-role="none">
-                        </div>
-                        <div class="entry" style="">密码至少6位哦</div>
-                        <div>
-                            <a href="#" class="login_on">立即登录</a>
-                        </div>
-                        <div class="btns clear">
-                            <p>
-                                <a href="#" data-ajax="false">立即注册</a>
-                                <a href="#" data-ajax="false">忘记密码？</a>
-                            </p>
-                        </div>
-                    </form>
+        <div class='content3'>
+            <div id="shop">
+                <h2>个人信息</h2>
+                <div class="form border">
+                    <div>
+                        <p>真实姓名</p>
+                        <input type="text" placeholder="请输入真实姓名" class="j-input" name="tel" value="" autocomplete="off" maxlength="11">
+                    </div>
+                    <div class="entry" style="">请输入真实姓名</div>
+                    <div>
+                        <p>身份证号码</p>
+                        <input type="text" placeholder="请输入身份证号码" class="j-input" name="tel" value="" autocomplete="off" maxlength="11">
+                    </div>
+                    <div class="entry" style="">请输入身份证号码</div>
+                    <div>
+                        <p>员工编号</p>
+                        <input type="text" placeholder="请输入员工编号" class="j-input err" name="tel" value="" autocomplete="off" maxlength="11">
+                    </div>
+                    <div class="entry hide" style="">请输入员工编号</div>
+                </div>
+                <h2>店铺信息</h2>
+                <div class="form">
+                    <div>
+                        <p>店铺名称</p>
+                        <input type="text" placeholder="请输入店铺名称" class="j-input" name="tel" value="" autocomplete="off" maxlength="11">
+                    </div>
+                    <div class="entry" style="">请输入店铺名称</div>
+                    <div class="change_shop clear">
+                        <span>店铺url:http://liebao.yixin.com/</span>
+                        <em>1234</em>
+                        <a href="javascript:;">修改</a>
+                    </div>
+                    <div class="for_change_shop">
+                        <input type="text" placeholder="请输入店铺ID" class="j-input" name="tel" value="" autocomplete="off" maxlength="11">
+                        <div class="entry hide" style="">输入店铺ID</div>
+                    </div>
+
+                    <div class="login_on">
+                        <a href="#">申请</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -85,6 +99,9 @@
         $(function(){
             $(".rtop").bind("touchstart",function(){
                 $("body,html").animate({scrollTop:0},800);   
+            });
+            $(".change_shop a").on("touchstart",function(){
+                $(".for_change_shop").show();
             });
         })
     </script>
