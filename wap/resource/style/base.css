@@ -89,7 +89,7 @@ html{font-size: 14px; font-family:arial,'Microsoft Yahei';overflow-y:scroll; }
 /*nav*/
 #nav{
 	width: 100%;
-	height: 183px;
+	height: 121px;
 }
 #nav{
 	overflow: hidden;
@@ -103,7 +103,7 @@ html{font-size: 14px; font-family:arial,'Microsoft Yahei';overflow-y:scroll; }
 	-ms-transition: left 800ms ease-in 0;
 	transition: left 800ms ease-in 0;
 	width: 100%;
-	height: 180px;
+	height: 118px;
 }
 #nav ul li{
 	min-width:320px;
@@ -122,7 +122,7 @@ html{font-size: 14px; font-family:arial,'Microsoft Yahei';overflow-y:scroll; }
 	height: 3px;
 	position: absolute;
 	left: 0;
-	bottom: 10px;
+	bottom: 9px;
 	z-index: 3; 
 }
 #nav .pagenavi a{
@@ -218,6 +218,15 @@ footer#footer .version a{
 /*版权*/
 .copyright{
 	padding-top: 6px;
+	padding-bottom: 20px;
+	background: #37383d;
+	line-height: 1.5rem;
+	text-align: center;
+	color: #c6cacf;
+	font-weight: normal;
+}
+.copyright2{
+	padding-top: 6px;
 	padding-bottom: 60px;
 	background: #37383d;
 	line-height: 1.5rem;
@@ -225,7 +234,6 @@ footer#footer .version a{
 	color: #c6cacf;
 	font-weight: normal;
 }
-
 /*两个浮层*/
 #index_login{
 	width: 100%;
@@ -245,6 +253,56 @@ footer#footer .version a{
 	right: 17px;
 	top: 6px;
 }
+#mask{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	bottom: 53px;
+	background-color: rgba(0,0,0,0.7);
+	z-index: 10;
+	display: none;
+}
+#index_nav{
+	position: fixed;
+	bottom: 65px;
+	left: 5px;
+	z-index: 12;
+
+}
+#index_nav div a{
+	padding-left: 60px;
+	height: 50px;
+	display: block;
+	text-align: left;
+	line-height: 50px;
+	margin: 5px 0;
+	color: #ffffff;
+	font-size: 1.1rem;
+	background-size: 50px 50px;
+	background-repeat: no-repeat;
+}
+#index_nav div a:nth-child(1){
+	background-image: url(../images/1.png);
+}
+#index_nav div a:nth-child(2){
+	background-image: url(../images/2.png);
+}
+#index_nav div a:nth-child(3){
+	background-image: url(../images/3.png);
+}
+#index_nav a.a1{
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	background-color: #f65c3e;
+	border-radius: 25px;
+	text-align: center;
+	font-size: 3.5rem;
+	color: #ffffff;
+	line-height: 50px;
+}
+
 
 /*page 后退*/
 .page{
@@ -417,16 +475,21 @@ footer#footer .version a{
 /*协议*/
 #login .xieyi{
 	padding-left: .6rem;
+	padding-top: .8rem;
+	padding-bottom: .8rem;
 }
 #login .xieyi i{
 	width: 16px;
 	height: 16px;
 	float: left;
-	background-image: url(../images/xieyi.png);
-	background-size: 16px 16px;
+	background-image: url(../images/xieyi1.png);
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: 16px 31px;
 }
 #login .xieyi i.active{
-	background-image: url(../images/xieyi2.png);
+	background-position: 0 -16px;
+	background-image: url(../images/xieyi1.png);
 }
 #login .xieyi span{
 	line-height: 16px;
@@ -605,6 +668,7 @@ footer#footer .version a{
 	background-color: #eee;
 	font-size: 1rem;
 	line-height: 1.5rem;
+	overflow: auto;
 }
 #feddback p.p_right{
 	float: right;
@@ -647,4 +711,27 @@ footer#footer .version a{
 	text-align: center;
 	background-color: #fc6c4d;
 	border-radius: 5px;
+}
+/*rule*/
+#rule{
+	padding: .6rem .4rem;
+}
+#rule h2,#rule h4{
+	text-align: center;
+}
+#rule h2{
+	font-size: 1.8rem;
+	line-height: 3rem;
+}
+#rule h4{
+	font-size: 1rem;
+	line-height: 2rem;
+}
+#rule p{
+	font-size: 1rem;
+	line-height: 1.4rem;
+}
+#rule strong{
+	line-height: 1.6rem;
+	font-weight: bolder;
 }

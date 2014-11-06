@@ -27,8 +27,8 @@
         <div class='content2'>
             <div id="form">
                 <ul class='clear'>
-                    <li><a href="javascript:;">登录</a></li>
-                    <li class="border"><a href="javascript:;" class='active'>注册</a></li>
+                    <li><a href="javascript:;" class='active'>注册</a></li>
+                    <li class="border"><a href="javascript:;">登录</a></li>
                 </ul>
                 <div id="login">
                     <form method="post" action="">
@@ -45,11 +45,11 @@
                         </div>
                         <div class="entry" style="">密码至少6位哦</div>
                         <div class="ver clear">
-                            <input type="text" placeholder="请输入验证码">
+                            <input type="number" placeholder="请输入验证码">
                             <a href="javascript:;">获取短信验证码</a>
                         </div>
                         <div class="xieyi clear">
-                            <i class='active'></i>
+                            <i></i>
                             <span>我已阅读并同意</span>
                             <a href="#">《星火注册服务协议》</a>
                         </div>
@@ -63,8 +63,8 @@
         <footer id="footer">
             <section class="signUp">
                 <p class="ing">
-                    <a class="ui-link">登录</a>
-                    <a class="ui-link">注册</a>
+                    <a class="ui-link hide">登录</a>
+                    <a class="ui-link hide">注册</a>
                     <a href="javascript:;" class="fr">意见反馈</a>
                 </p>
                 <!--  <p class="ing">
@@ -93,6 +93,13 @@
             $(".rtop").bind("touchstart",function(){
                 $("body,html").animate({scrollTop:0},800);   
             });
+            $("#login .who a").bind("touchstart",function(){
+                $("#login .who a").removeClass('active');
+                $(this).addClass('active');
+            });
+            $('.xieyi i').bind('touchstart', function(){
+                this.className == 'active' ? $(this).removeClass('active') : $(this).addClass('active');
+            })
         })
     </script>
 </html>

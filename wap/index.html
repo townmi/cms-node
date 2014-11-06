@@ -94,17 +94,34 @@
 	            	<a href="javascript:;" class="rtop">返回顶部</a>
             	</p>
             </section>
-            <section class="copyright">
+            <!-- 登陆后 class换成copyright -->
+            <!-- <section class="copyright">
+                宜信卓越财富投资管理（北京）有限公司<br>京ICP备12016237号-1 版权所有 
+            </section> -->
+            <section class="copyright2">
                 宜信卓越财富投资管理（北京）有限公司<br>京ICP备12016237号-1 版权所有 
             </section>
         </footer>
         <section>
+            <!-- 登陆后hide #index_login这个div -->
+            <!-- <div id="index_login hide">
+                <img src="resource/images/index_login.png" alt="index_login">
+                <a href="#" onclick="alert(1);"></a>
+            </div> -->
         	<div id="index_login">
         		<img src="resource/images/index_login.png" alt="index_login">
         		<a href="#" onclick="alert(1);"></a>
         	</div>
-        	<div id="index_nav"></div>
+        	<div id="index_nav">
+                <div class="hide">
+                    <a href="#">首页</a>
+                    <a href="#">我的申请</a>
+                    <a href="#">关于星火</a>
+                </div>
+                <a href="javascript::" class="a1">+</a> 
+            </div>
         </section>
+        <div id="mask"></div>
 	</div>
 </body>
     <script src="resource/js/jquery.min.js"></script>
@@ -114,6 +131,7 @@
 	<script type="text/javascript">
 	    var active = 0,
 	        as = $(".pagenavi").find("a");
+        var onOff = true;
 	    $(function () {                  
 	        var t2 = new TouchSlider({ 
 	        	id: 'slider', 
@@ -133,6 +151,25 @@
 			$(".rtop").bind("tap",function(){
 				$("body,html").animate({scrollTop:0},800);	 
 			});
+            $("#index_nav .a1").bind('tap', function(){
+                if(onOff){
+                    onOff = false
+                    $('#mask').stop().show();
+                    $("#index_nav div").stop().show();
+                    $(this).html("×");
+                }else{
+                    onOff = true;
+                    $('#mask').stop().hide();
+                    $("#index_nav div").stop().hide();
+                    $(this).html("+");
+                }
+            });
+            $('#mask').bind('tap', function(){
+                onOff = true;
+                $('#mask').stop().hide();
+                $("#index_nav div").stop().hide();
+                $("#index_nav .a1").html("+");
+            })
 		})
 	</script>
 </html>
