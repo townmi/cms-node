@@ -1,19 +1,24 @@
-var express = require('express');
+var http = require('http');
 var path = require("path");
+
+var express = require('express');
 var favicon = require('serve-favicon');
-var logger = require('morgan');
+var session = require('express-session');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var http = require('http');
-var routes = require('./route/index');
+
+var index = require('./route/index');
+var admin = require('./route/admin');
 
 var app = express();
 
-// set
-app.set('port', process.env.PROT || 3000);
+// view engine setup
 app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+app.disable("x-powered-by");
 
-app.use(logger('dev'));
+// set port
+app.set('port', process.env.PROT || 3000);
 
 // body-parser
 // parse application/x-www-form-urlencoded
@@ -23,20 +28,26 @@ app.use(bodyParser.json())
 // parse application/vnd.api+json as json
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }))
 
-app.use(cookieParser());
+
+app.use(cookieParser('keyboard cat'));
 app.use(express.static(path.join(__dirname, 'public')));
+
+// session
+app.use(session({ 
+    secret: 'keyboard cat', 
+    key: 'sid', 
+    cookie: { secure: false }
+}));
 
 // favicon
 app.use(favicon(__dirname + '/public/favicon.ico'));
 
-app.set('view engine', 'ejs');
-
 // route
-app.get('/',routes);
-app.post('/post',routes);
-app.post('/delete',routes);
-app.get('/home',routes);
+app.get("/", index);
 
+
+// 后台路由
+app.get("/admin", admin);
 
 
 // 404
@@ -45,8 +56,8 @@ app.use(function(req, res, next){
 	err.status = 404;
 	next(err);
 });
+
+
 http.createServer(app).listen(app.get('port'), function(){
 	console.log('Express server listening on port' + app.get('port'));
 });
-
-

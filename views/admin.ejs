@@ -1,0 +1,145 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<% include head_meta.ejs %>
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+</head>
+<body>
+
+	<!-- 顶部 -->
+	<div class="head">
+		<div class="ui_head"></div>
+	</div>
+
+
+	<!-- 左侧导航 -->
+	<div class="nav">
+		<!-- 一级列表 -->
+		<ul class="ui_nav" id="js_nav">
+		
+			<li class="ui_nav_one">
+				<div>
+					<i class="fa fa-cart-plus"></i>
+					<a href="javascript:;">资源管理</a>
+				</div>
+			</li>
+			<li class="ui_nav_one">
+				<div>
+					<i class="fa fa-cog"></i>
+					<a href="#">系统管理</a>
+					<i class="fa fa-angle-down"></i>
+				</div>
+				<ul>
+					<li class="top"><i class="fa fa-sort-asc"></i></li>
+					<li class="ui_nav_two"><a href="#">系统管理</a></li>
+					<li class="ui_nav_two"><a href="#">菜单管理</a></li>
+					<li class="ui_nav_two"><a href="#">角色管理</a></li>
+					<li class="ui_nav_two"><a href="#">管理员管理</a></li>
+					<li class="ui_nav_two"><a href="#">后台日志</a></li>
+					<li class="ui_nav_two"><a href="#">站点配置</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	<!-- body -->
+	<div class="body">
+		<div class="ui_body">
+			<h2 class="ui_top_title">资源管理</h2>
+			<!-- 基础表单 -->
+			<div class="ui_form">
+				<form action="">
+					<div>
+						<label for="username">上传文件：</label>
+						<input type="file" class="ui_file_upload">
+						<a href="javascript:;" class="ui_base_btn">上传</a>
+					</div>
+				</form>
+			</div>
+
+			<!-- 基础表格 -->
+			<div class="ui_table">
+				<h3>图片</h3>
+				<table>
+					<thead>
+						<tr>
+							<th width="50px;">序号</th>
+							<th>图片地址</th>
+							<th>图片大小</th>
+							<th>图片作者</th>
+							<th>上传时间</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>1234</td>
+							<td>12345</td>
+							<td>1234</td>
+							<td>12345</td>
+							<td>
+								<a href="javascript:;">删除</a>
+								<a href="javascript:;">预览</a>
+							</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>123</td>
+							<td>1234</td>
+							<td>12345</td>
+							<td>123456</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>123</td>
+							<td>1234</td>
+							<td>12345</td>
+							<td>123456</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colSpan="5">
+								<div class="ui_pages">
+									1234
+								</div>
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+
+		</div>
+	</div>
+	<% include foot.ejs %>
+
+</body>
+<script type="text/javascript">
+	
+	var nav = document.getElementById("js_nav");
+	var navLists = nav.getElementsByClassName("ui_nav_one");
+
+	for(var i=0; i<navLists.length; i++){
+		navLists[i].addEventListener("click", function listOpen(){
+			closeALLlist();
+			if(this.getElementsByTagName("ul").length){
+				this.getElementsByTagName("ul")[0].className = "show";
+				this.getElementsByTagName("i")[1].className = "fa fa-angle-up";
+			}
+		});
+	}
+
+	function closeALLlist(){
+		for(var i=0; i<navLists.length; i++){
+			if(navLists[i].getElementsByTagName("ul").length){
+				navLists[i].getElementsByTagName("i")[1].className = "fa fa-angle-down";
+				navLists[i].getElementsByTagName("ul")[0].className = "hide";
+			}
+		}
+	}
+	
+</script>
+</html>
