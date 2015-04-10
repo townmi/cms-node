@@ -76,18 +76,16 @@ router.post("/admin/resource", function (req, res){
     		type = "music";
 
     	}else{
-    		return res.send({target: false})
+    		return res.send({target: false});
     	}
 
-    	var version = new Date().getTime();
+    	var newPath = dir + files.file.path.split("_")[1] + "." + files.file.name.split(".")[1];
+		
+		path = path + files.file.path.split("_")[1] + "." + files.file.name.split(".")[1];
 
-    	console.log(files.file);
+    	fs.renameSync(files.file.path, newPath);
 
-    	//fs.renameSync(files.file.path, dir+files.file.name+"?v="+version);
-    	
-    	fs.renameSync(files.file.path, dir+files.file.name);
-
-    	var STR = '"'+path+files.file.name+'","'+(files.file.size/1024).toFixed(2)+"KB"+'","'+'admin'+'","'+type+'"';
+    	var STR = '"'+path+'","'+(files.file.size/1024).toFixed(2)+"KB"+'","'+'admin'+'","'+type+'"';
 
     	var SQL = 'INSERT INTO resource(path, size, upload_user, type) values('+STR+')';
 
@@ -113,9 +111,12 @@ router.post("/admin/resource/delete", function (req, res){
 
 	read.get(function (rows){
 
-		var SQL = 'DELETE FROM resource WHERE id="'+req.body.key+'"';
 		// 删除文件
-		fs.unlinkSync("./public/upload"+rows[0].path.split("upload")[1]);
+		if(fs.existsSync("./public/upload"+rows[0].path.split("upload")[1])){
+			fs.unlinkSync("./public/upload"+rows[0].path.split("upload")[1]);
+		}
+		var SQL = 'DELETE FROM resource WHERE id="'+req.body.key+'"';
+		
 		// 把记录从库里面删掉
 		read.get(function(){
 
