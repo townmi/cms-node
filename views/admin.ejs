@@ -3,8 +3,9 @@
 <html lang="en">
 <head>
 	<% include head_meta.ejs %>
-	<link rel="stylesheet" type="text/css" href="../css/reset.css">
-	<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+	<title><%- title+"管理" %></title>
+	<link rel="stylesheet" type="text/css" href="../../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../../css/font-awesome.min.css">
 </head>
 <body>
 
@@ -13,36 +14,7 @@
 		<div class="ui_head"></div>
 	</div>
 
-
-	<!-- 左侧导航 -->
-	<div class="nav">
-		<!-- 一级列表 -->
-		<ul class="ui_nav" id="js_nav">
-		
-			<li class="ui_nav_one">
-				<div>
-					<i class="fa fa-cart-plus"></i>
-					<a href="javascript:;">资源管理</a>
-				</div>
-			</li>
-			<li class="ui_nav_one">
-				<div>
-					<i class="fa fa-cog"></i>
-					<a href="#">系统管理</a>
-					<i class="fa fa-angle-down"></i>
-				</div>
-				<ul>
-					<li class="top"><i class="fa fa-sort-asc"></i></li>
-					<li class="ui_nav_two"><a href="#">系统管理</a></li>
-					<li class="ui_nav_two"><a href="#">菜单管理</a></li>
-					<li class="ui_nav_two"><a href="#">角色管理</a></li>
-					<li class="ui_nav_two"><a href="#">管理员管理</a></li>
-					<li class="ui_nav_two"><a href="#">后台日志</a></li>
-					<li class="ui_nav_two"><a href="#">站点配置</a></li>
-				</ul>
-			</li>
-		</ul>
-	</div>
+	<% include nav.ejs %>
 	
 	<!-- body -->
 	<div class="body">
@@ -50,11 +22,11 @@
 			<h2 class="ui_top_title">资源管理</h2>
 			<!-- 基础表单 -->
 			<div class="ui_form">
-				<form action="">
+				<form action="/" id="form">
 					<div>
-						<label for="username">上传文件：</label>
-						<input type="file" class="ui_file_upload">
-						<a href="javascript:;" class="ui_base_btn">上传</a>
+						<label for="file">上传文件：</label>
+						<input type="file" id="file" name="file">
+						<a href="javascript:;" class="ui_base_btn" id="js_upload">上传</a>
 					</div>
 				</form>
 			</div>
@@ -69,40 +41,28 @@
 							<th>图片地址</th>
 							<th>图片大小</th>
 							<th>图片作者</th>
-							<th>上传时间</th>
-							<th>操作</th>
+							<th width="150px;">上传时间</th>
+							<th width="150px;">操作</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>1</td>
-							<td>1234</td>
-							<td>12345</td>
-							<td>1234</td>
-							<td>12345</td>
-							<td>
-								<a href="javascript:;">删除</a>
-								<a href="javascript:;">预览</a>
-							</td>
-						</tr>
-						<tr>
-							<td>1</td>
-							<td>123</td>
-							<td>1234</td>
-							<td>12345</td>
-							<td>123456</td>
-						</tr>
-						<tr>
-							<td>1</td>
-							<td>123</td>
-							<td>1234</td>
-							<td>12345</td>
-							<td>123456</td>
-						</tr>
+						<% resource.forEach(function(e,i){ %>
+							<tr>
+								<td><%= i+1 %></td>
+								<td><%= e.path %></td>
+								<td><%= e.size %></td>
+								<td><%= e.upload_user %></td>
+								<td><%= e.upload_time %></td>
+								<td>
+									<a href="javascript:;" class="ui_table_btn">删除</a>
+									<a href="javascript:;" class="ui_table_btn">预览</a>
+								</td>
+							</tr>
+						<% }) %>
 					</tbody>
 					<tfoot>
 						<tr>
-							<td colSpan="5">
+							<td colSpan="6">
 								<div class="ui_pages">
 									1234
 								</div>
@@ -117,6 +77,38 @@
 	<% include foot.ejs %>
 
 </body>
+<script type="text/javascript" src="../../js/jquery-min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#js_upload").on("click", function(){
+
+			var formobj =  document.getElementById("form");
+
+			var data = new FormData(formobj);
+
+			$.ajax({
+				type: "post",
+				url: "/admin/resource",
+				data: data,
+				processData: false,
+	        	contentType: false,
+				success: function (data) {
+					if(data.target){
+						window.location.reload();
+					}
+				},
+				error: function (msg) {
+				   	
+				}
+			});
+
+		});
+	})
+
+</script>
+
+
+
 <script type="text/javascript">
 	
 	var nav = document.getElementById("js_nav");

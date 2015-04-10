@@ -6,7 +6,7 @@ var pool = mysql.createPool({
 	host : config.host,
 	port : config.port,
 	user : config.user,
-	database : 'test',
+	database : 'cms',
 	password : config.password,
 	multipleStatements : true
 });
@@ -18,7 +18,6 @@ function Read(sql){
 	this.sql = sql;
 
 };
-
 
 Read.prototype.get = function (cb, sql){
 

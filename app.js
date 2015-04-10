@@ -9,6 +9,7 @@ var bodyParser = require('body-parser');
 
 var index = require('./route/index');
 var admin = require('./route/admin');
+var resource = require("./route/resource");
 
 var app = express();
 
@@ -48,6 +49,11 @@ app.get("/", index);
 
 // 后台路由
 app.get("/admin", admin);
+// 资源管理
+app.get("/admin/resource", resource);
+app.post("/admin/resource", resource);
+app.get("/admin/resource/:id", resource)
+
 
 
 // 404
