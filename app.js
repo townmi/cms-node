@@ -52,6 +52,7 @@ app.get("/admin", admin);
 // 资源管理
 app.get("/admin/resource", resource);
 app.post("/admin/resource", resource);
+app.post("/admin/resource/delete", resource);
 app.get("/admin/resource/:id", resource)
 
 

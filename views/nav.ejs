@@ -42,3 +42,28 @@
 			</li>
 		</ul>
 	</div>
+	<script type="text/javascript">
+		
+		var nav = document.getElementById("js_nav");
+		var navLists = nav.getElementsByClassName("ui_nav_one");
+
+		for(var i=0; i<navLists.length; i++){
+			navLists[i].addEventListener("click", function listOpen(){
+				closeALLlist();
+				if(this.getElementsByTagName("ul").length){
+					this.getElementsByTagName("ul")[0].className = "show";
+					this.getElementsByTagName("i")[1].className = "fa fa-angle-up";
+				}
+			});
+		}
+
+		function closeALLlist(){
+			for(var i=0; i<navLists.length; i++){
+				if(navLists[i].getElementsByTagName("ul").length){
+					navLists[i].getElementsByTagName("i")[1].className = "fa fa-angle-down";
+					navLists[i].getElementsByTagName("ul")[0].className = "hide";
+				}
+			}
+		}
+		
+	</script>

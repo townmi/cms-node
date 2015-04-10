@@ -38,9 +38,9 @@
 					<thead>
 						<tr>
 							<th width="50px;">序号</th>
-							<th>图片地址</th>
-							<th>图片大小</th>
-							<th>图片作者</th>
+							<th><%- title+"地址" %></th>
+							<th width="150px;"><%- title+"大小" %></th>
+							<th width="100px;"><%- title+"作者" %></th>
 							<th width="150px;">上传时间</th>
 							<th width="150px;">操作</th>
 						</tr>
@@ -54,7 +54,7 @@
 								<td><%= e.upload_user %></td>
 								<td><%= e.upload_time %></td>
 								<td>
-									<a href="javascript:;" class="ui_table_btn">删除</a>
+									<a href="javascript:;" class="ui_table_btn js_delete" key=<%- '"'+e.id+'"' %>>删除</a>
 									<a href="javascript:;" class="ui_table_btn">预览</a>
 								</td>
 							</tr>
@@ -80,6 +80,7 @@
 <script type="text/javascript" src="../../js/jquery-min.js"></script>
 <script type="text/javascript">
 	$(function(){
+		// 上传
 		$("#js_upload").on("click", function(){
 
 			var formobj =  document.getElementById("form");
@@ -103,35 +104,40 @@
 			});
 
 		});
+		// 删除
+		$(".js_delete").on("click", function(){
+
+			var key = $(this).attr("key");
+
+			if( window.confirm('你确定要删除'+key+'吗？') ){
+
+				$.ajax({
+
+					type: "post",
+					url: "/admin/resource/delete",
+					data: {"key" : key},
+					dataType: "json",
+
+					success: function (data){
+						if(data.target){
+
+							window.location.reload();
+
+						}
+					},
+					error: function (msg){
+					   	
+					}
+
+				})
+
+			}else{
+				return
+			}
+
+
+		})
 	})
 
-</script>
-
-
-
-<script type="text/javascript">
-	
-	var nav = document.getElementById("js_nav");
-	var navLists = nav.getElementsByClassName("ui_nav_one");
-
-	for(var i=0; i<navLists.length; i++){
-		navLists[i].addEventListener("click", function listOpen(){
-			closeALLlist();
-			if(this.getElementsByTagName("ul").length){
-				this.getElementsByTagName("ul")[0].className = "show";
-				this.getElementsByTagName("i")[1].className = "fa fa-angle-up";
-			}
-		});
-	}
-
-	function closeALLlist(){
-		for(var i=0; i<navLists.length; i++){
-			if(navLists[i].getElementsByTagName("ul").length){
-				navLists[i].getElementsByTagName("i")[1].className = "fa fa-angle-down";
-				navLists[i].getElementsByTagName("ul")[0].className = "hide";
-			}
-		}
-	}
-	
 </script>
 </html>

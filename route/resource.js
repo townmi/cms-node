@@ -25,6 +25,7 @@ router.get("/admin/resource/:id", function (req, res){
 		var list = [];
 		rows.forEach(function (e, i){
 			var o = {};
+			o.id = e.id;
 			o.path = e.path;
 			o.size = e.size;
 			o.upload_user = e.upload_user;
@@ -78,11 +79,15 @@ router.post("/admin/resource", function (req, res){
     		return res.send({target: false})
     	}
 
-    	
+    	var version = new Date().getTime();
 
+    	console.log(files.file);
+
+    	//fs.renameSync(files.file.path, dir+files.file.name+"?v="+version);
+    	
     	fs.renameSync(files.file.path, dir+files.file.name);
 
-    	var STR = '"'+path+files.file.name+'","'+(files.file.size/1024)+"KB"+'","'+'admin'+'","'+type+'"';
+    	var STR = '"'+path+files.file.name+'","'+(files.file.size/1024).toFixed(2)+"KB"+'","'+'admin'+'","'+type+'"';
 
     	var SQL = 'INSERT INTO resource(path, size, upload_user, type) values('+STR+')';
 
@@ -97,6 +102,30 @@ router.post("/admin/resource", function (req, res){
     });
 
 });
+
+// 删除
+router.post("/admin/resource/delete", function (req, res){
+
+	// 读库
+	var SQL = 'SELECT path FROM resource WHERE id="'+req.body.key+'"';
+
+	var read = new Read(SQL);
+
+	read.get(function (rows){
+
+		var SQL = 'DELETE FROM resource WHERE id="'+req.body.key+'"';
+		// 删除文件
+		fs.unlinkSync("./public/upload"+rows[0].path.split("upload")[1]);
+		// 把记录从库里面删掉
+		read.get(function(){
+
+			res.send({target: true});
+
+		}, SQL);
+
+	})
+
+})
 
 function addZero(num){
 	var num = parseInt(num);
