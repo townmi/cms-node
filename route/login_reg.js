@@ -17,6 +17,8 @@ router.get("/admin/reg", function (req, res){
 });
 
 router.post("/admin/login", function (req, res){
+	console.log(req.body);
+	return;
 	res.render("index");
 });
 

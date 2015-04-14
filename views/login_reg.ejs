@@ -19,16 +19,58 @@
 				<input type="text" id="username" value="ggogog" class="ui_base_text">
 			</div>
 			<div>
-				<label for="username">密码：</label>
-				<input type="text" id="username" value="ggogog" class="ui_base_text">
+				<label for="password">密码：</label>
+				<input type="text" id="password" value="ggogog" class="ui_base_text">
 			</div>
 			<div class="ui_form_btn">
-				<a href="javascript:;" class="ui_base_btn" style="line-height: 34px; margin-left: 45px; width: 192px;"><%= title %></a>
+				<a href="javascript:;" class="ui_base_btn" style="line-height: 34px; margin-left: 45px; width: 192px;" id="js_login"><%= title %></a>
 			</div>
 		</form>
 	</div>
 	
 </body>
 <script type="text/javascript" src="../../js/jquery-min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#js_login").on("click", function(){
+		var username = $("#username").val();
+		var password = $("#password").val();
+		
+		if($.trim(username) === "" || $.trim(password) === ""){
+			alert("用户名或密码不能为空！")
+		}
 
+		$.ajax({
+			type: "post",
+			url: "/admin/login",
+			data: {
+				username : username,
+				password :password
+			},
+			dataType: "json",
+			success : function (data){
+
+			},
+			error: function (err){
+				throw err;
+			}
+		})
+
+
+	})
+})
+</script>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -25,8 +25,6 @@ router.post("/resource", function (req, res){
 
     form.parse(req, function (err, fields, files){
 
-    	
-
    		var dir = "./public/upload/imgs/";
 
     	fs.renameSync(files.file.path, dir+files.file.name);
