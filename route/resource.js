@@ -7,7 +7,7 @@ var Read = require("../src/readSQL.js");
 
 var app = express();
 var router = express.Router();
-var basePath = "http://10.106.88.43:3000/";
+var basePath = "http://10.106.90.230:3000/";
 // exports
 module.exports = router;
 

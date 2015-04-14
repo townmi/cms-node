@@ -55,7 +55,7 @@
 								<td><%= e.upload_time %></td>
 								<td>
 									<a href="javascript:;" class="ui_table_btn js_delete" key=<%- '"'+e.id+'"' %>>删除</a>
-									<a href="javascript:;" class="ui_table_btn">预览</a>
+									<a href="javascript:;" class="ui_table_btn js_see">预览</a>
 								</td>
 							</tr>
 						<% }) %>
@@ -75,7 +75,10 @@
 		</div>
 	</div>
 	<% include foot.ejs %>
-
+	<div id="mask"></div>
+	<div class="ui_see" id="js_see">
+		<img src="" alt="see">
+	</div>
 </body>
 <script type="text/javascript" src="../../js/jquery-min.js"></script>
 <script type="text/javascript">
@@ -136,6 +139,19 @@
 			}
 
 		});
+
+		// 预览
+		$(".js_see").on("click", function(){
+			var src = $(this).parents("tr").find("td").eq(1).html();
+			$("#js_see img").attr("src", src);
+			$("#mask").show();
+			$("#js_see").show();
+		});
+		$("#mask").on("click", function(){
+			$("#mask").hide();
+			$("#js_see").hide();
+
+		})
 		
 	})
 
