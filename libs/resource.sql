@@ -49,3 +49,32 @@ INSERT INTO `resource` (`id`, `path`, `size`, `upload_user`, `upload_time`, `typ
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+
+/*TABLE user*/
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `username` varchar(150) NOT NULL,
+  `password` varchar(150) NOT NULL,
+  `email` varchar(150) NOT NULL,
+  `team` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=0 ;
+
+
+
+INSERT INTO `user` (`id`, `username`, `password`, `email`, `team`) VALUES
+(0, 'root', 'root123456', 'admin@admin.com', 'root');
+
+
+
+
+
+
+
+
+
+
+
+

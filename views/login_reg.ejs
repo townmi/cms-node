@@ -10,20 +10,20 @@
 <body>
 
 	<div class="ui_logreg">
-		<form action="">
+		<form action="/admin/login">
 			<div>
 				<h2><%= title %></h2>
 			</div>
 			<div>
-				<label for="username">邮箱：</label>
-				<input type="text" id="username" value="ggogog" class="ui_base_text">
+				<label for="username">用户名：</label>
+				<input type="text" id="username" class="ui_base_text" name="username" placeholder="请输入昵称／邮箱">
 			</div>
 			<div>
-				<label for="password">密码：</label>
-				<input type="text" id="password" value="ggogog" class="ui_base_text">
+				<label for="password">密&nbsp;&nbsp;&nbsp;&nbsp;码：</label>
+				<input type="text" id="password" class="ui_base_text" name="password" placeholder="请输入密码">
 			</div>
 			<div class="ui_form_btn">
-				<a href="javascript:;" class="ui_base_btn" style="line-height: 34px; margin-left: 45px; width: 192px;" id="js_login"><%= title %></a>
+				<a href="javascript:;" class="ui_base_btn" style="line-height: 34px; margin-left: 55px; width: 192px;" id="js_login"><%= title %></a>
 			</div>
 		</form>
 	</div>
@@ -49,7 +49,7 @@ $(function(){
 			},
 			dataType: "json",
 			success : function (data){
-
+				console.log(data);
 			},
 			error: function (err){
 				throw err;

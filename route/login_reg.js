@@ -17,7 +17,20 @@ router.get("/admin/reg", function (req, res){
 });
 
 router.post("/admin/login", function (req, res){
-	console.log(req.body);
+
+	var username = req.body.username,
+		password = req.body.password;
+	var SQL = 'select username,password from user where username="'+username+'"or(email="'+username+'")';
+	var read = new Read(SQL);
+
+	read.get(function (rows){
+		if(rows.length){
+			if(rows[0].password === password){
+				return res.send({pass: "ok"})
+			}
+		}
+	});
+
 	return;
 	res.render("index");
 });
