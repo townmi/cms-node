@@ -53,11 +53,14 @@ app.get("/", index);
 // 登陆注册
 app.get("/admin/login", login_reg);
 app.get("/admin/reg", login_reg);
+app.get("/admin/captcha", login_reg);
 app.post("/admin/login", login_reg);
 app.post("/admin/reg", login_reg);
+app.post("/admin/logout", login_reg);
 
 
-app.get("/admin", admin);
+// app.get("/admin", admin);
+// app.post("/admin", admin);
 // 资源管理
 app.get("/admin/resource", resource);
 app.post("/admin/resource", resource);

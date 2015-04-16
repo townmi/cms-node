@@ -4,19 +4,25 @@
   "description": "cms for node",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/ --bail",
+    "test-cov": "node node_modules/istanbul-harmony/lib/cli.js cover ./node_modules/mocha/bin/_mocha  -- test/"
   },
   "author": "towne",
   "dependencies": {
-    "express": "~4.2.0",
-    "cookie-parser": "~1.0.1",
     "body-parser": "~1.0.0",
-    "serve-favicon": "~2.1.0",
+    "ccap": "^0.5.3",
+    "cookie-parser": "~1.0.1",
     "ejs": "~0.8.5",
-    "mysql": "~2.0.0",
-    "formidable": "~1.0.17",
     "eventproxy": "^0.3.2",
-    "express-session": "^1.11.1"
+    "express": "~4.2.0",
+    "express-session": "^1.11.1",
+    "formidable": "~1.0.17",
+    "istanbul": "^0.3.13",
+    "mocha": "^2.2.4",
+    "mysql": "~2.0.0",
+    "serve-favicon": "~2.1.0",
+    "should": "^5.2.0",
+    "supertest": "^0.15.0"
   },
   "repository": {
     "type": "git",
