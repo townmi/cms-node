@@ -12,11 +12,15 @@ var ccap = require("ccap")();
 
 var Read = require("../src/readSQL.js");
 var md = require("../src/md5.js");
+var SendEmail = require("../src/sendEmail.js");
+var des = require("../src/des.js");
 
 var app = express();
 var router = express.Router();
+
 // 全局ccap储存
 var ccap_value;
+var basePath = "http://10.106.90.230:3000/";
 
 // exports
 module.exports = router;
@@ -93,12 +97,43 @@ router.post("/admin/reg", function (req, res){
 		if(rows.length){
 			return res.send({target:false, info:"邮箱已注册", method: "email"});
 		}else{
-			return res.send({target:true, info:"注册成功"});
+			var config = {
+				service : "qq",
+				auth: {
+					user: "1047887945@qq.com",
+					pass: "abcd1234"
+				}
+			}
+			var sendEmail = new SendEmail(config);
+
+			// 邮箱地址加密
+			var session = {email: email,password: password};
+			var key = des.toDES(JSON.stringify(session),"18505102468","18505102468","18505102468");
+			url = basePath+"admin/reg/"+key;
+
+			var opt = {
+				from: "test <1047887945@qq.com>",
+				to: email,
+				html: "<a href="+url+">"+url+"<a>"
+			}
+
+			sendEmail.send(opt,cb);
+
+			function cb(data){
+				console.log(data);
+				return res.send({target:true, info:"注册成功"});
+			}
+
 		}
 	});
 });
 
+router.get("/admin/reg/:id", function (req, res){
+	var key = req.params.id;
+	var getSTR = des.toSTR(key,"18505102468","18505102468","18505102468");
 
+	console.log(JSON.parse(getSTR));
+})
 // 登出
 router.post("/admin/logout", function (req, res){
 	req.session.login = null;

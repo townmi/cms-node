@@ -54,6 +54,7 @@ app.get("/", index);
 app.get("/admin/login", login_reg);
 app.get("/admin/reg", login_reg);
 app.get("/admin/captcha", login_reg);
+app.get("/admin/reg/:id", login_reg);
 app.post("/admin/login", login_reg);
 app.post("/admin/reg", login_reg);
 app.post("/admin/logout", login_reg);
