@@ -4,11 +4,14 @@
  * date : 2015.4.16
  *
 */
+var crypto = require("crypto");
+var Buffer = require("buffer").Buffer;
 
 var express = require('express');
 var ccap = require("ccap")();
 
 var Read = require("../src/readSQL.js");
+var md = require("../src/md5.js");
 
 var app = express();
 var router = express.Router();
@@ -47,7 +50,7 @@ router.post("/admin/login", function (req, res){
 		captcha = req.body.captcha;
 
 	// 值验证
-	console.log(captcha, ccap_value);
+
 	if(captcha != ccap_value) return res.send({target:false, info: "验证码错误", method: "captcha"});
 
 	var SQL = 'select username,password,team,email from user where username="'+username+'"or(email="'+username+'")';
@@ -74,7 +77,25 @@ router.post("/admin/login", function (req, res){
 });
 
 router.post("/admin/reg", function (req, res){
-	
+
+	var email = req.body.email,
+		password = req.body.password,
+		captcha = req.body.captcha;
+
+	// 值验证
+
+	if(captcha != ccap_value) return res.send({target:false, info: "验证码错误", method: "captcha"});
+
+	var SQL = 'select username,team,email from user where email="'+email+'"';
+	var read = new Read(SQL);
+
+	read.get(function (rows){
+		if(rows.length){
+			return res.send({target:false, info:"邮箱已注册", method: "email"});
+		}else{
+			return res.send({target:true, info:"注册成功"});
+		}
+	});
 });
 
 
@@ -87,6 +108,8 @@ router.post("/admin/logout", function (req, res){
 
 	res.send({target:true,req: req.headers});
 })
+
+
 
 
 

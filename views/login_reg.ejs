@@ -124,7 +124,7 @@ $(function(){
 		var captcha = $("#captcha").val();
 		
 		if($.trim(username) === "" || $.trim(password) === "" || $.trim(captcha) === ""){
-			alert("用户名或密码不能为空！")
+			return alert("用户名或密码不能为空！")
 		}
 
 		$.ajax({
@@ -139,6 +139,39 @@ $(function(){
 			success : function (data){
 				if(data.target){
 					window.location.href = "http://10.106.90.230:3000/admin/";
+				}else{
+					$("#"+data.method).attr({"data-title": data.info}).tip({color: "red", excursion_X: 50});
+				}
+			},
+			error: function (err){
+				throw err;
+			}
+		})
+
+	});
+
+	// 注册
+	$("#js_reg").on("click", function(){
+		var email = $("#email").val();
+		var password = $("#password").val();
+		var captcha = $("#captcha").val();
+		
+		if($.trim(email) === "" || $.trim(password) === "" || $.trim(captcha) === ""){
+			return alert("用户名或密码不能为空！")
+		}
+
+		$.ajax({
+			type: "post",
+			url: "/admin/reg",
+			data: {
+				email : email,
+				password : password,
+				captcha : captcha
+			},
+			dataType: "json",
+			success : function (data){
+				if(data.target){
+					console.log(data)
 				}else{
 					$("#"+data.method).attr({"data-title": data.info}).tip({color: "red", excursion_X: 50});
 				}

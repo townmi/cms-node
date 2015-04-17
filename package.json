@@ -17,6 +17,7 @@
     "express": "~4.2.0",
     "express-session": "^1.11.1",
     "formidable": "~1.0.17",
+    "nodemailer":"*",
     "istanbul": "^0.3.13",
     "mocha": "^2.2.4",
     "mysql": "~2.0.0",
