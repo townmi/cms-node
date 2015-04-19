@@ -20,7 +20,7 @@ var router = express.Router();
 
 // 全局ccap储存
 var ccap_value;
-var basePath = "http://10.106.90.230:3000/";
+var basePath = "http://127.0.0.1:3000/";
 
 // exports
 module.exports = router;
