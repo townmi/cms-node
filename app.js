@@ -8,11 +8,12 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./route/index');
+/*
 var login_reg = require('./route/login_reg');
 var admin = require('./route/admin');
 var resource = require("./route/resource");
 var os = require("./route/os");
-
+*/
 var app = express();
 
 // view engine setup
@@ -47,8 +48,10 @@ app.use(favicon(__dirname + '/public/favicon.ico'));
 
 // route
 app.get("/", index);
+app.get("/data/grid", index);
+app.post("/data/grid", index);
 
-
+/*
 // 后台路由
 // 登陆注册
 app.get("/admin/login", login_reg);
@@ -70,7 +73,7 @@ app.get("/admin/resource/:id", resource)
 // 系统管理
 app.get("/admin/os", resource);
 app.post("/admin/os/user", resource);
-
+*/
 
 // 404
 app.use(function(req, res, next){
