@@ -1,88 +1,93 @@
-var http = require('http');
+/**
+ * Module dependencies.
+ */
 var path = require("path");
 
-var express = require('express');
-var favicon = require('serve-favicon');
-var session = require('express-session');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+var logger = require('koa-logger');
 
-var index = require('./route/index');
-/*
-var login_reg = require('./route/login_reg');
-var admin = require('./route/admin');
-var resource = require("./route/resource");
-var os = require("./route/os");
-*/
-var app = express();
+var router = require('koa-router')();
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
-app.disable("x-powered-by");
+var parse = require('koa-body');
 
-// set port
-app.set('port', process.env.PROT || 3000);
+var koa = require('koa');
 
-// body-parser
-// parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
-// parse application/json
-app.use(bodyParser.json())
-// parse application/vnd.api+json as json
-app.use(bodyParser.json({ type: 'application/vnd.api+json' }))
+var app = koa();
+
+var render = require('koa-ejs');
+
+var hbs = require('koa-hbs');
 
 
-app.use(cookieParser('keyboard cat'));
-app.use(express.static(path.join(__dirname, 'public')));
+// "database"
 
-// session
-app.use(session({ 
-    secret: 'keyboard cat', 
-    key: 'sid', 
-    cookie: { secure: false }
+var posts = ["1","2"];
+
+// middleware
+
+app.use(logger());
+
+// setup views mapping .html
+// to the swig template engine
+app.use(hbs.middleware({
+    viewPath: __dirname + '/views'
 }));
 
-// favicon
-app.use(favicon(__dirname + '/public/favicon.ico'));
+// router middleware
 
-// route
-app.get("/", index);
-app.get("/data/grid", index);
-app.post("/data/grid", index);
-
-/*
-// 后台路由
-// 登陆注册
-app.get("/admin/login", login_reg);
-app.get("/admin/reg", login_reg);
-app.get("/admin/captcha", login_reg);
-app.get("/admin/reg/:id", login_reg);
-app.post("/admin/login", login_reg);
-app.post("/admin/reg", login_reg);
-app.post("/admin/logout", login_reg);
+// app.use(router.get('/', list));
+// app.use(router.get('/post/new', add));
+// app.use(router.get('/post/:id', show));
+// app.use(router.post('/post', create));
 
 
-// app.get("/admin", admin);
-// app.post("/admin", admin);
-// 资源管理
-app.get("/admin/resource", resource);
-app.post("/admin/resource", resource);
-app.post("/admin/resource/delete", resource);
-app.get("/admin/resource/:id", resource)
-// 系统管理
-app.get("/admin/os", resource);
-app.post("/admin/os/user", resource);
-*/
+router.get('/', list);
+router.get('/post/new', add);
+router.get('/post/:id', show);
+router.post('/post', create);
 
-// 404
-app.use(function(req, res, next){
-	var err = new ERROR('NOT FOUND');
-	err.status = 404;
-	next(err);
-});
+app.use(router.routes()).use(router.allowedMethods());
 
+// route definitions
 
-http.createServer(app).listen(app.get('port'), function(){
-	console.log('Express server listening on port' + app.get('port'));
-});
+/**
+ * Post listing.
+ */
+
+function *list() {
+    yield this.render('list', { a : "index" });
+}
+
+/**
+ * Show creation form.
+ */
+
+function *add() {
+  this.body = yield this.render('new');
+}
+
+/**
+ * Show post :id.
+ */
+
+function *show(id) {
+  var post = posts[id];
+  if (!post) this.throw(404, 'invalid post id');
+  this.body = yield this.render('show', { post: post });
+}
+
+/**
+ * Create a post.
+ */
+
+function *create() {
+  var post = yield parse(this);
+  var id = posts.push(post) - 1;
+  post.created_at = new Date;
+  post.id = id;
+  this.redirect('/');
+}
+
+// listen
+
+app.listen(3000);
+console.log('listening on port 3000');

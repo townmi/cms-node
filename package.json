@@ -1,40 +1,32 @@
 {
-  "name": "cms-node",
-  "version": "0.0.1",
-  "description": "cms for node",
-  "main": "index.js",
-  "scripts": {
-    "test": "mocha test/ --bail",
-    "test-cov": "node node_modules/istanbul-harmony/lib/cli.js cover ./node_modules/mocha/bin/_mocha  -- test/"
-  },
-  "author": "towne",
-  "dependencies": {
-    "body-parser": "~1.0.0",
-    "ccap": "^0.5.3",
-    "cookie-parser": "~1.0.1",
-    "ejs": "~0.8.5",
-    "eventproxy": "^0.3.2",
-    "express": "~4.2.0",
-    "express-session": "^1.11.1",
-    "formidable": "~1.0.17",
-    "nodemailer":"*",
-    "istanbul": "^0.3.13",
-    "mocha": "^2.2.4",
-    "mysql": "~2.0.0",
-    "serve-favicon": "~2.1.0",
-    "should": "^5.2.0",
-    "supertest": "^0.15.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/townmi/cms-node.git"
-  },
-  "keywords": [
-    "cms-node"
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/townmi/cms-node/issues"
-  },
-  "homepage": "https://github.com/townmi/cms-node"
+    "name": "cms-node",
+    "version": "0.0.2",
+    "description": "cms for node",
+    "main": "index.js",
+    "scripts": {
+    },
+    "author": "towne",
+    "dependencies": {
+        "koa": "*",
+        "koa-body": "*",
+        "koa-router": "*",
+        "koa-logger": "*",
+        "koa-ejs": "*",
+        "koa-hbs": "*"
+    },
+    "devDependencies": {
+
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/townmi/cms-node.git"
+    },
+    "keywords": [
+        "cms-node"
+    ],
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/townmi/cms-node/issues"
+    },
+    "homepage": "https://github.com/townmi/cms-node"
 }
