@@ -70,6 +70,5 @@ var User = sequelize.define('User',
 );
 
 module.exports = {
-	User: User,
-	Error: sequelize.ValidationError
+	User: User
 }
