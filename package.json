@@ -12,7 +12,11 @@
         "koa-router": "*",
         "koa-logger": "*",
         "koa-ejs": "*",
-        "koa-hbs": "*"
+        "koa-hbs": "*",
+        "koa-session": "*",
+        "keygrip": "*",
+        "mysql": "*",
+        "sequelize": "*"
     },
     "devDependencies": {
 
