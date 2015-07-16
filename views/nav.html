@@ -6,7 +6,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand fn-ms" href="/">星火后台管理系统</a>
+        <a class="navbar-brand fn-ms" href="/">管理系统</a>
     </div>
     <!-- /.navbar-header -->
 
@@ -16,18 +16,10 @@
                 <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
             </a>
             <ul class="dropdown-menu dropdown-user">
-                <li><a href="#" class="fn-ms"><i class="fa fa-user fa-fw">
-                </i>
-                	星火管理员  
-                </a>
-                </li>
-	                <li><a href="/admin.shtml" class="fn-ms"><i class="fa fa-gear fa-fw"></i>切换到老系统</a>
-                </li>
-                <li><a href="javascript:;" id="js_modify_password" class="fn-ms"><i class="fa fa-yelp fa-fw"></i>修改密码</a>
-                </li>
+                <li><a href="#" class="fn-ms"><i class="fa fa-user fa-fw"></i>管理员</a></li>
+                <li><a href="javascript:;" id="js_modify_password" class="fn-ms"><i class="fa fa-yelp fa-fw"></i>修改密码</a></li>
                 <li class="divider"></li>
-                <li><a href="/xinghuo/logout.shtml" class="fn-ms"><i class="fa fa-sign-out fa-fw"></i> 登出</a>
-                </li>
+                <li><a href="/xinghuo/logout.shtml" class="fn-ms"><i class="fa fa-sign-out fa-fw"></i> 登出</a></li>
             </ul>
         </li>
     </ul>
@@ -35,210 +27,17 @@
     <div class="navbar-default sidebar" role="navigation">
         <div class="sidebar-nav navbar-collapse">
             <ul class="nav" id="side-menu">
-	                <li>
-	                    <a href="javascript:;" class="fn-ms">
-	                    <i class="fa fa-shopping-cart fa-fw"></i>
-	                     	交易管理
-	                     <span class="fa arrow"></span></a>
-		                    <ul class="nav nav-second-level">
-		                        <li>
-		                            <a href="/xinghuodeal/trade.shtml" class="fn-ms">交易单管理</a>
-		                        </li>
-		                        <li>
-		                            <a href="/xinghuodeal/payment.shtml" class="fn-ms">支付单管理</a>
-		                        </li>
-		                    </ul>
-	                </li>
-	                <li>
-	                    <a href="javascript:;" class="fn-ms">
-	                    <i class="fa fa-user fa-fw"></i>
-	                     	用户管理
-	                     <span class="fa arrow"></span></a>
-		                    <ul class="nav nav-second-level">
-		                        <li>
-		                            <a href="/xinghuouser/consumer.shtml" class="fn-ms">普通用户</a>
-		                        </li>
-		                    </ul>
-	                </li>
-	                <li>
-	                    <a href="javascript:;" class="fn-ms">
-	                    <i class="fa fa-certificate fa-fw"></i>
-	                     	理财经理
-	                     <span class="fa arrow"></span></a>
-		                    <ul class="nav nav-second-level">
-		                        <li>
-		                            <a href="/xinghuouser/director.shtml" class="fn-ms">理财经理管理</a>
-		                        </li>
-		                        <li>
-		                            <a href="/xinghuouser/rank.shtml" class="fn-ms">级别管理</a>
-		                        </li>
-		                    </ul>
-	                </li>
-	                <li>
-	                    <a href="javascript:;" class="fn-ms">
-	                    <i class="fa fa-check fa-fw"></i>
-	                     	审核管理
-	                     <span class="fa arrow"></span></a>
-		                    <ul class="nav nav-second-level">
-		                        <li>
-		                            <a href="/xinghuoaudit/audit/applyshop.shtml" class="fn-ms">申请开店</a>
-		                        </li>
-		                        <li>
-		                            <a href="/xinghuoaudit/audit/modifyshop.shtml" class="fn-ms">修改店铺</a>
-		                        </li>
-		                    </ul>
-	                </li>
-	                <li>
-	                    <a href="javascript:;" class="fn-ms">
-	                    <i class="fa fa-th-list fa-fw"></i>
-	                     	产品管理
-	                     <span class="fa arrow"></span></a>
-		                    <ul class="nav nav-second-level">
-		                        <li>
-		                            <a href="/xinghuoproduct/goods.shtml" class="fn-ms">产品管理</a>
-		                        </li>
-		                        <li>
-		                            <a href="/xinghuoproduct/recommend.shtml" class="fn-ms">产品推荐</a>
-		                        </li>
-		                    </ul>
-	                </li>
-	                <li>
-	                    <a href="javascript:;" class="fn-ms">
-	                    <i class="fa fa-tag fa-fw"></i>
-	                     	费率管理
-	                     <span class="fa arrow"></span></a>
-		                    <ul class="nav nav-second-level">
-		                        <li>
-		                            <a href="/xinghuoproduct/rate.shtml" class="fn-ms">费率管理</a>
-		                        </li>
-		                        <li>
-		                            <a href="/xinghuoproduct/ratetemplate.shtml" class="fn-ms">费率模板</a>
-		                        </li>
-		                    </ul>
-	                </li>
-	                <li>
-	                    <a href="javascript:;" class="fn-ms">
-	                    <i class="fa fa-folder fa-fw"></i>
-	                     	内容管理
-	                     <span class="fa arrow"></span></a>
-		                    <ul class="nav nav-second-level">
-		                        <li>
-		                            <a href="/xinghuocontent/content.shtml" class="fn-ms">内容管理</a>
-		                        </li>
-		                        <li>
-		                            <a href="/xinghuocontent/ad.shtml" class="fn-ms">广告管理</a>
-		                        </li>
-		                    </ul>
-	                </li>
-	                <li>
-	                    <a href="javascript:;" class="fn-ms">
-	                    <i class="fa fa-ticket fa-fw"></i>
-	                     	活动管理
-	                     <span class="fa arrow"></span></a>
-		                    <ul class="nav nav-second-level">
-		                        <li>
-		                            <a href="/xinghuohuodong/huodong.shtml" class="fn-ms">活动管理</a>
-		                        </li>
-		                        <li>
-		                            <a href="/xinghuohuodong/redcreate.shtml" class="fn-ms">创建红包</a>
-		                        </li>
-		                        <li>
-		                            <a href="/xinghuohuodong/red.shtml" class="fn-ms">红包记录</a>
-		                        </li>
-		                        <li>
-		                            <a href="/xinghuohuodong/effectStatistical.shtml" class="fn-ms">效果分析</a>
-		                        </li>
-		                        <li>
-		                            <a href="/xinghuohuodong/huodongTrade.shtml" class="fn-ms">活动交易单</a>
-		                        </li>
-		                    </ul>
-	                </li>
-	                <li>
-	                    <a href="javascript:;" class="fn-ms">
-	                    <i class="fa fa-laptop fa-fw"></i>
-	                     	结算管理
-	                     <span class="fa arrow"></span></a>
-		                    <ul class="nav nav-second-level">
-		                        <li>
-		                            <a href="/xinghuosettle/settled/yes.shtml" class="fn-ms">宜信员工已结算</a>
-		                        </li>
-		                        <li>
-		                            <a href="/xinghuosettle/noSettle/yes.shtml" class="fn-ms">宜信员工未结算</a>
-		                        </li>
-		                        <li>
-		                            <a href="/xinghuosettle/settled/no.shtml" class="fn-ms">非宜信员工已结算</a>
-		                        </li>
-		                        <li>
-		                            <a href="/xinghuosettle/noSettle/no.shtml" class="fn-ms">非宜信员工未结算</a>
-		                        </li>
-		                    </ul>
-	                </li>
-	                <li>
-	                    <a href="javascript:;" class="fn-ms">
-	                    <i class="fa fa-bar-chart-o fa-fw"></i>
-	                     	数据统计
-	                     <span class="fa arrow"></span></a>
-		                    <ul class="nav nav-second-level">
-		                        <li>
-		                            <a href="/xinghuodata/all.shtml" class="fn-ms">汇总统计</a>
-		                        </li>
-		                        <li>
-		                            <a href="/xinghuodata/month.shtml" class="fn-ms">月统计</a>
-		                        </li>
-		                        <li>
-		                            <a href="/xinghuodata/hour.shtml" class="fn-ms">小时统计</a>
-		                        </li>
-		                        <li>
-		                            <a href="/xinghuodata/day.shtml" class="fn-ms">天统计</a>
-		                        </li>
-		                        <li>
-		                            <a href="/xinghuodata/dayNow.shtml" class="fn-ms">当天实时数量</a>
-		                        </li>
-		                        <li>
-		                            <a href="/xinghuodata/dealCount.shtml" class="fn-ms">交易笔数分类</a>
-		                        </li>
-		                        <li>
-		                            <a href="/xinghuodata/product.shtml" class="fn-ms">产品统计</a>
-		                        </li>
-		                        <li>
-		                            <a href="/xinghuodata/redActivity.shtml" class="fn-ms">红包活动</a>
-		                        </li>
-		                        <li>
-		                            <a href="/xinghuodata/storeRed.shtml" class="fn-ms">店铺红包明细</a>
-		                        </li>
-		                        <li>
-		                            <a href="/xinghuodata/storeRegister.shtml" class="fn-ms">店铺首页注册</a>
-		                        </li>
-		                    </ul>
-	                </li>
-	                <li>
-	                    <a href="javascript:;" class="fn-ms">
-	                    <i class="fa fa-cog fa-fw"></i>
-	                     	配置中心
-	                     <span class="fa arrow"></span></a>
-		                    <ul class="nav nav-second-level">
-		                        <li>
-		                            <a href="/xinghuosite/site.shtml" class="fn-ms">站点配置</a>
-		                        </li>
-		                        <li>
-		                            <a href="/xinghuosite/params.shtml" class="fn-ms">参数配置</a>
-		                        </li>
-		                    </ul>
-	                </li>
-	                <li>
-	                    <a href="javascript:;" class="fn-ms">
-	                    <i class="fa fa-android fa-fw"></i>
-	                     	其他
-	                     <span class="fa arrow"></span></a>
-		                    <ul class="nav nav-second-level">
-		                        <li>
-		                            <a href="/xinghuoother/applog.shtml" class="fn-ms">APP日志</a>
-		                        </li>
-		                        <li>
-		                            <a href="/xinghuoother/userinfo.shtml" class="fn-ms">用户查询</a>
-		                        </li>
-		                    </ul>
-	                </li>
+                <li>
+                    <a href="javascript:;" class="fn-ms"><i class="fa fa-user fa-fw"></i>用户管理<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="/xinghuouser/consumer.shtml" class="fn-ms">普通用户</a>
+                        </li>
+                        <li>
+                            <a href="/xinghuouser/director.shtml" class="fn-ms">会员用户</a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
         <!-- /.sidebar-collapse -->

@@ -2,15 +2,19 @@
  * [依赖模块]
  * @type {[type]}
  */
-var path = require("path");
-var logger = require('koa-logger');
-var session = require('koa-session');
-var router = require('koa-router')();
-var parse = require('koa-body');
-var koa = require('koa');
-var app = koa();
-var render = require('koa-ejs');
-var indexRoute = require("./routes/index.js");
+var path 		= require("path");
+var logger 		= require('koa-logger');
+// var session 	= require('koa-session');
+var router 		= require('koa-router')();
+var parse 		= require('koa-body');
+var koa 		= require('koa');
+var app 		= koa();
+var render 		= require('koa-ejs');
+var indexRoute 	= require("./routes/index.js");
+
+
+var session = require('koa-generic-session');
+var redisStore = require('koa-redis');
 
 var KeyGrip = require('keygrip');
 
@@ -40,19 +44,27 @@ app.use(router.routes()).use(router.allowedMethods());
 
 
 app.use(function *(next){
-	var n = this.session.views || 0;
-	this.session.views = ++n;
-	console.log(this.session);
+	// var n = this.session.name || 0;
+	// this.session.name = ++n;
+	console.log(this);
+
 	this.basePath = "http://10.100.142.95/admin2/build/";
 	yield next;
 });
 
 // app.keys = new KeyGrip(['im a newer secret', 'i like turtle'], 'sha256');
 
-app.keys = ['some secret hurr'];
+app.name = 'koa-session-test';
+app.keys = ['keys', 'keykeys'];
 
-app.use(session({key: "cms-node"},app));
+// app.use(session({key: "cms-node"},app));
 
+// console.log(redisStore({host: "10.100.142.95", port: 6379}))
+
+app.use(session({
+	key : "cms-node",
+	store : redisStore({host: "10.100.142.95", port: 6379})
+}));
 
 /**
  * [监听端口绑定]

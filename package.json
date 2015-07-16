@@ -14,6 +14,8 @@
         "koa-ejs": "*",
         "koa-hbs": "*",
         "koa-session": "*",
+        "koa-generic-session": "*",
+        "koa-redis": "*",
         "keygrip": "*",
         "mysql": "*",
         "sequelize": "*"
