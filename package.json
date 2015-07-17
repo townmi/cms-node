@@ -17,8 +17,10 @@
         "koa-generic-session": "*",
         "koa-redis": "*",
         "keygrip": "*",
+        "redis": "*",
         "mysql": "*",
-        "sequelize": "*"
+        "sequelize": "*",
+        "co": "*"
     },
     "devDependencies": {
 
